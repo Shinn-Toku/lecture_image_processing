@@ -12,7 +12,7 @@ imagesc(ORG); axis image; % 画像の表示
 
 によって，原画像を読み込み，グレースケール画像へと変換し，表示した結果を図１に示す．
 
-![原画像](https://github.com/Shinn-Toku/lecture_image_processing/blob/master/image/kadai2/kadai2/kadai2_org_img.png?raw=true)  
+![原画像](https://github.com/Shinn-Toku/lecture_image_processing/blob/master/image/kadai2/kadai2_org_img.png?raw=true)  
 図1 原画像
 
 原画像をグレースケールへと変換したもの(今後はこれを原画像とする)は1ピクセルずつ0～255の値でその濃度を表現している．
@@ -23,7 +23,7 @@ IMG = ORG>128;
 
 2階調の画像の生成結果を図2に示す．
 
-![2階調画像](https://github.com/Shinn-Toku/lecture_image_processing/blob/master/image/kadai2/kadai2/kadai2_2tone.png?raw=true)  
+![2階調画像](https://github.com/Shinn-Toku/lecture_image_processing/blob/master/image/kadai2/kadai2_2tone.png?raw=true)  
 図2 2階調
 
 同様に4階調にするには，0～64を0，65～128を1，129～192を2，193~255を3とする．すなわち，
@@ -36,7 +36,7 @@ IMG = IMG0 + IMG1 + IMG2;
 とする．これにより，0～3の4値の4階調となる．
 4階調の画像の生成結果を図３に示す．
 
-![4階調画像](https://github.com/Shinn-Toku/lecture_image_processing/blob/master/image/kadai2/kadai2/kadai2_4tone.png?raw=true)  
+![4階調画像](https://github.com/Shinn-Toku/lecture_image_processing/blob/master/image/kadai2/kadai2_4tone.png?raw=true)  
 図3 4階調
 
 同様に8階調にするには，4階調のときからさらにステップを半分にする．すなわち，
@@ -52,7 +52,7 @@ IMG = IMG0 + IMG1 + IMG2 + IMG3 + IMG4 + IMG5 + IMG6;
 
 とする．8階調の画像の生成結果を図4に示す．
 
-![原画像](https://github.com/Shinn-Toku/lecture_image_processing/blob/master/image/kadai2/kadai2/kadai2_8tone.png?raw=true)  
+![原画像](https://github.com/Shinn-Toku/lecture_image_processing/blob/master/image/kadai2/kadai2_8tone.png?raw=true)  
 図4 8階調
 
 このようにサンプリング幅が大きくなると，モザイク状のサンプリング歪みが発生する．

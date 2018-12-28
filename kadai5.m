@@ -3,9 +3,9 @@
 % 下記はサンプルプログラムである．
 % 課題作成にあたっては「Lenna」以外の画像を用いよ．
 
-ORG=imread('Lenna.png'); % 原画像の入力
+ORG=imread('airi_Base_graybg.png'); % 原画像の入力
 ORG = rgb2gray(ORG); % カラー画像を白黒濃淡画像へ変換
-imagesc(ORG); colormap(gray); colorbar;
+imagesc(ORG); colormap(gray); colorbar; axis image;
 pause;
 
 H = imhist(ORG); %ヒストグラムのデータを列ベクトルEに格納
@@ -30,5 +30,5 @@ end;
 end;
 
 IMG = ORG > max_thres;
-imagesc(IMG); colormap(gray); colorbar;
+imagesc(IMG); colormap(gray); colorbar; axis image;
 pause;

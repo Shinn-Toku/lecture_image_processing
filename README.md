@@ -6,11 +6,12 @@
 
 - [Shinn-Toku/lecture_image_processing](https://github.com/Shinn-Toku/lecture_image_processing) - レポートとMATLABソースコード
 - [Shinn-Toku/lecture_image_processing/image](https://github.com/Shinn-Toku/lecture_image_processing/tree/master/image) - レポート用画像
+- [Shinn-Toku/lecture_image_processing/sample](https://github.com/Shinn-Toku/lecture_image_processing/tree/master/sample) - フォーク元の例
 
 ## Description
 
-- [kadai2.md](kadai2.md) ~ [kadai10.md](kadai10.md) - レポート．Markdownで記述，GitHub上での閲覧を推奨．
-- [kadai2.m](kadai2.m) ~ [kadai10.m](kadai10.m) - MATLABソースコード
+- [kadai1.md](kadai1.md) ~ [kadai10.md](kadai10.md) - レポート．Markdownで記述，GitHub上での閲覧を推奨．
+- [kadai1.m](kadai1.m) ~ [kadai10.m](kadai10.m) - MATLABソースコード
 
 ## References
 

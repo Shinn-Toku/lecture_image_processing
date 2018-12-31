@@ -11,12 +11,12 @@ imagesc(ORG); colormap(gray); colorbar; axis image;
 
 によって，原画像を読み込み，グレースケール画像へと変換し，表示した結果を図１に示す．  
 
-![原画像](https://github.com/Shinn-Toku/lecture_image_processing/blob/master/image/kadai4/kadai4_org_img.png?raw=true)  
+![原画像](/image/kadai4/kadai4_org_img.png?raw=true)  
 図1 原画像  
 
 ## ヒストグラム
 imhist(ORG);  
 によりヒストグラムを表示した結果を図2に示す．  
 
-![ヒストグラム](https://github.com/Shinn-Toku/lecture_image_processing/blob/master/image/kadai4/kadai4_hist.png?raw=true)  
+![ヒストグラム](/image/kadai4/kadai4_hist.png?raw=true)  
 図2 ヒストグラム  

@@ -12,7 +12,7 @@ imagesc(ORG); colormap(gray); colorbar; axis image;
 
 によって，原画像を読み込み，グレースケール画像へと変換し，表示した結果を図１に示す．  
 
-![原画像](https://github.com/Shinn-Toku/lecture_image_processing/blob/master/image/kadai3/kadai3_org_img.png?raw=true)  
+![原画像](/image/kadai3/kadai3_org_img.png?raw=true)  
 図1 原画像  
 
 原画像をグレースケールへと変換したもの(以下これを原画像とする)は1ピクセルずつ0～255の値でその濃度を表現している．  
@@ -27,7 +27,7 @@ IMG = ORG>64;
 
 というコードになる．その実行結果を図2に示す．  
 
-![閾値が64のとき](https://github.com/Shinn-Toku/lecture_image_processing/blob/master/image/kadai3/kadai3_th64.png?raw=true)  
+![閾値が64のとき](/image/kadai3/kadai3_th64.png?raw=true)  
 図2 閾値が64のとき    
 
 ## 閾値が96のとき
@@ -37,7 +37,7 @@ IMG = ORG > 96;
 
 となる．その実行結果を図3に示す．   
 
-![閾値が96のとき](https://github.com/Shinn-Toku/lecture_image_processing/blob/master/image/kadai3/kadai3_th96.png?raw=true)  
+![閾値が96のとき](/image/kadai3/kadai3_th96.png?raw=true)  
 図3 閾値が96のとき  
 
 ## 閾値が128のとき
@@ -47,7 +47,7 @@ IMG = ORG > 128;
 
 となる．その実行結果を図4に示す．   
 
-![閾値が128のとき](https://github.com/Shinn-Toku/lecture_image_processing/blob/master/image/kadai3/kadai3_th128.png?raw=true)  
+![閾値が128のとき](/image/kadai3/kadai3_th128.png?raw=true)  
 図4 閾値が128のとき  
 
 ## 閾値が192のとき
@@ -57,5 +57,5 @@ IMG = ORG > 192;
 
 となる．その実行結果を図5に示す．   
 
-![閾値が192のとき](https://github.com/Shinn-Toku/lecture_image_processing/blob/master/image/kadai3/kadai3_th192.png?raw=true)  
+![閾値が192のとき](/image/kadai3/kadai3_th192.png?raw=true)  
 図5 閾値が192のとき  

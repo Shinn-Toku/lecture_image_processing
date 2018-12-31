@@ -1,6 +1,7 @@
 # 画像処理工学 レポート
 
 ## Overview
+
 画像処理工学のレポートです．
 
 - [Shinn-Toku/lecture_image_processing](https://github.com/Shinn-Toku/lecture_image_processing) - レポートとMATLABソースコード
@@ -16,7 +17,7 @@
 - [村上伸一 : "画像処理工学"，東京電機大学出版局，2004年](https://www.tdupress.jp/book/b349338.html)
 - [Math Works : "MATLAB Documentation"](https://jp.mathworks.com/help/matlab/index.html)
 
-## 元の[README.md](https://github.com/mackhasegawa/lecture_image_processing/blob/master/README.md)
+## [元のREADME.md](https://github.com/mackhasegawa/lecture_image_processing/blob/master/README.md)
 
 (参考)Matlab入門  
 http://www.ns.kogakuin.ac.jp/~ct13050/johogaku/2-2.matlab_getstart.pdf
@@ -25,5 +26,6 @@ http://www.ns.kogakuin.ac.jp/~ct13050/johogaku/2-2.matlab_getstart.pdf
 https://github.com/mackhasegawa/lecture_image_processing/blob/master/kadai1.md
 
 フリー素材
-- https://www.pakutaso.com/ 
+
+- https://www.pakutaso.com/
 - フリー素材アイドル「MIKA☆RIKA」 http://mika-rika-free.jp/

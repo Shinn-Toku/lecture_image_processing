@@ -10,9 +10,9 @@
 この画像は縦512画像，横512画素による正方形のディジタルカラー画像である．  
 
 ```MATLAB
-ORG = imread('milkdrop.jpg'); % 原画像の入力  
-ORG = rgb2gray(ORG); % カラー画像を白黒濃淡画像へ変換  
-imagesc(ORG); colormap(gray); colorbar; axis image;  
+ORG=imread('milkdrop.jpg'); % 原画像の入力  
+ORG = rgb2gray(ORG);  
+imagesc(ORG); colormap(gray); colorbar; axis image; % 画像の表示  
 ```
 
 によって，原画像を読み込み，グレースケール画像へと変換し，表示した結果を図１に示す．  
@@ -20,81 +20,36 @@ imagesc(ORG); colormap(gray); colorbar; axis image;
 ![原画像](/image/kadai6/kadai6_org_img.png?raw=true)  
 図1 原画像  
 
-## ヒストグラム
+## 閾値128による二値化
 
 ```MATLAB
-imhist(ORG);  
+IMG = ORG>128; % 128による二値化  
+imagesc(IMG); colormap(gray); colorbar; axis image; % 画像の表示  
 ```
 
-によりヒストグラムを表示した結果を図2に示す．  
+による二値化の結果をに示す．  
 
-![ヒストグラム](/image/kadai5/kadai5_hist.png?raw=true)  
-図2 ヒストグラム  
+![閾値128による二値化](/image/kadai6/kadai6_128.png?raw=true)  
+図2 閾値128による二値化  
 
-## 判別分析法
+## ディザ法による二値化
 
-判別分析法はクラス内分散が最小，クラス間分散が最大となるような閾値を求め2値化する手法である．  
-まず，
+ディザ法とは，原画像の各画素の濃度値を，  
+![式1](https://latex.codecogs.com/svg.latex?f(x,y)<T(x,y))なら，![式2](https://latex.codecogs.com/svg.latex?g(x,y)=0)  
+![式3](https://latex.codecogs.com/svg.latex?f(x,y)\geq&space;T(x,y))なら，![式4](https://latex.codecogs.com/svg.latex?g(x,y)=1)  
+のように画素位置によりあらかじめ定められたディザマトリクスTの値(閾値)と比較し，その大小関係で出力画素の濃度値を決定する方法である．  
+ここで，*f*(*x*, *y*)は入力画像の濃度値，*g*(*x*, *y*)は出力画像の濃度値，*T*(*x*, *y*)は画層位置(*x*, *y*)での閾値である．  
+
+MATLABでは，dither関数を用いることでディザ法による二値化を行うことができる．  
 
 ```MATLAB
-H = imhist(ORG); %ヒストグラムのデータを列ベクトルHに格納  
+IMG = dither(ORG); % ディザ法による二値化  
+imagesc(IMG); colormap(gray); colorbar; axis image; % 画像の表示  
 ```
 
-によりヒストグラムのデータを列ベクトルに格納する．つぎに，
+により，ディザ法を用いて二値化した結果を図3に示す．  
 
-```MATLAB
-myu_T = mean(H);  
-max_val = 0;  
-max_thres = 1;  
-```
+![ディザ法による二値化](/image/kadai6/kadai6_dither.png?raw=true)  
+図3 ディザ法による二値化  
 
-により各初期値を設定する．そしてfor文により，ヒストグラムを２つに分けるすべての分け方で分散を求める．  
-
-```MATLAB
-for i=1:255  
-    [...]  
-end;  
-```
-
-for文内では，まずヒストグラムを2つのクラスC1,C2に分ける．  
-
-```MATLAB
-    C1 = H(1:i); %ヒストグラムを2つのクラスに分ける  
-    C2 = H(i+1:256);  
-```
-
-次に，それぞれのクラスの画素数をsum関数，平均値をmean関数，分散をvar関数でそれぞれ求める．  
-
-```MATLAB
-    n1 = sum(C1); %画素数の算出  
-    n2 = sum(C2);  
-    myu1 = mean(C1); %平均値の算出  
-    myu2 = mean(C2);  
-    sigma1 = var(C1); %分散の算出  
-    sigma2 = var(C2);  
-```
-
-そして，その値を用いて，  
-
-```MATLAB
-    sigma_w = (n1*sigma1 + n2*sigma2) / (n1+n2); %クラス内分散の算出  
-    sigma_B = (n1*(myu1-myu_T)^2 + n2*(myu2-myu_T)^2) / (n1+n2); %クラス間分散の算出  
-```
-
-により，クラス内分散とクラス間を求め，  
-
-```MATLAB
-    if max_val < sigma_B / sigma_w  
-        max_val = sigma_B / sigma_w;  
-        max_thres = i;  
-```
-
-前回のループ実行時(1回目の場合は初期値0)と比較し，今回のループで求めたsigma_B/sigma_wが大きい場合はその値をmax_valに，その時の閾値iをmax_thresに保持する．  
-これをfor文により繰り返すことで，判別分析法による最大の閾値max_thresが求まる．  
-
-このコードによる判別分析法を用いて2値化した結果を図3に示す．  
-
-![判別分析法](/image/kadai5/kadai5_2tone.png?raw=true)  
-図3 判別分析法  
-
-このとき，35行目にブレークポイントを設定しmax_thresの値を確認した結果，この画像を入力した際の閾値は120であった．  
+図2と図3を比較すると，閾値128による二値化の場合，閾値を境界とした輪郭部分以外の情報が失われているが，ディザ法による二値化の場合，図1の原画像における背景の濃度などが再現できており，図2に比べ視覚的な情報が失われていないことが見てとれる．  

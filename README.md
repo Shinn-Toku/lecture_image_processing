@@ -17,6 +17,7 @@
 
 - [村上伸一 : "画像処理工学"，東京電機大学出版局，2004年](https://www.tdupress.jp/book/b349338.html)
 - [Math Works : "MATLAB Documentation"](https://jp.mathworks.com/help/matlab/index.html)
+- [ウェザーニューズ : "ウェザーロイド"](https://weathernews.jp/weatheroid/model/#tome_2D)
 
 ## [元のREADME.md](https://github.com/mackhasegawa/lecture_image_processing/blob/master/README.md)
 
